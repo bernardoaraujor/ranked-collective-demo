@@ -399,7 +399,7 @@ impl pallet_ranked_collective::Config for Runtime {
 	type Event = Event;
 	type PromoteOrigin = EnsureRootWithSuccess<AccountId, ConstU16<65535>>;
 	type DemoteOrigin = EnsureRootWithSuccess<AccountId, ConstU16<65535>>;
-	type Polls = RankedPolls;
+	type Polls = Referenda;
 	type MinRankOfClass = sp_runtime::traits::Identity;
 	type VoteWeight = pallet_ranked_collective::Geometric;
 }
@@ -422,7 +422,7 @@ construct_runtime!(
 		// Include the custom logic from the pallet-template in the runtime.
 		Preimage: pallet_preimage,
 		Scheduler: pallet_scheduler,
-		RankedPolls: pallet_referenda,
+		Referenda: pallet_referenda,
 		RankedCollective: pallet_ranked_collective,
 	}
 );
